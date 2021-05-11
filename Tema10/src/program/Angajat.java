@@ -1,6 +1,7 @@
 package program;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Angajat {
 
@@ -68,9 +69,9 @@ public class Angajat {
 	}
 
 	
-	public String toString() 
-	{
-		return "Nume : " + this.nume + "\nPost : " + this.post + "\nData angajarii : " + this.dataAngajarii
-				+ "\nSalariul : " + this.salariul;
+	public String toString() {
+		return "Nume : " + this.nume + "\nPost : " + this.post + "\nData angajarii : "
+				+ this.dataAngajarii.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + "\nSalariul : "
+				+ this.salariul;
 	}
 }
