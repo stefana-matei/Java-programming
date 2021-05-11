@@ -84,4 +84,11 @@ public class Angajat {
 				+ this.dataAngajarii.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + "\nSalariul : "
 				+ this.salariul;
 	}
+	
+	
+	//functie ce verifica daca angajatul are salariul mai mare decat o valoare data
+	public boolean hasSalaryBiggerThan(float value)
+	{
+		return this.salariul > value;
+	}
 }

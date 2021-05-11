@@ -36,6 +36,11 @@ public class MainApp {
 		angajati.forEach((value) -> System.out.println(value + "\n"));
 		
 		
+		//afisare angajati care au salariul peste 2500 ron
+		System.out.println("\nAngajatii cu salariile mai mari de 2500 RON : ");
+		angajati.stream()
+				.filter(angajat -> angajat.hasSalaryBiggerThan(2500))
+				.forEach((value) -> System.out.println(value + "\n"));
 
 	}
 }
