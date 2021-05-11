@@ -1,5 +1,6 @@
 Cristian, Senior Software Engineer, 07/07/2017, 9000
+Ion, Director General, 17/04/2021, 8400
+Cristina, Director economic, 03/04/2021, 5600
 Andreea, Ospatar, 22/08/2019, 1955
-Vasilica, Sef Contabil, 23/05/2000, 5900
-Ion, Director General, 17/08/2007, 8400
-Otilia, Junior Software Engineer, 21/04/2021, 2500
+Vasilica, Sef Contabil, 23/04/2021, 5900
+Otilia, Junior Software Engineer, 21/04/2020, 2500
