@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class MainApp {
 
@@ -16,6 +17,10 @@ public class MainApp {
 
 		// colectia de angajati de tip list
 		List<Angajat> angajati = new ArrayList<Angajat>();
+		
+		
+		//lista de angajatii din luna Aprilie cu functii de conducere
+		List<Angajat> aprilLeaders = new ArrayList<Angajat>();
 		
 		
 		while (input.hasNext()) {
@@ -33,14 +38,25 @@ public class MainApp {
 		
 		//afisare colectie creata de angajati
 		System.out.println("Toate datele despre angajatii din firma : " + "\n");
-		angajati.forEach((value) -> System.out.println(value + "\n"));
+		angajati.forEach(System.out::println);
 		
 		
 		//afisare angajati care au salariul peste 2500 ron
 		System.out.println("\nAngajatii cu salariile mai mari de 2500 RON : ");
 		angajati.stream()
 				.filter(angajat -> angajat.hasSalaryBiggerThan(2500))
-				.forEach((value) -> System.out.println(value + "\n"));
+				.forEach(System.out::println);
+		
+		
+		//afisare angajatii din luna Aprilie, a anului curent, care au functie de conducere
+		System.out.println("\nAngajatii din luna Aprilie, a anului curent, care au functie de conducere : ");
+		aprilLeaders = angajati
+						.stream()
+						.filter((angajat) -> angajat.isMonthOfEmployment(4))
+						.filter((angajat) -> angajat.isYearOfEmployment(2021))
+						.filter(Angajat::hasLeadingPosition)
+						.collect(Collectors.toList());
+						
 
 	}
 }

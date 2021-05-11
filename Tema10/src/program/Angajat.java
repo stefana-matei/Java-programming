@@ -82,7 +82,7 @@ public class Angajat {
 	{
 		return "Nume : " + this.nume + "\nPost : " + this.post + "\nData angajarii : "
 				+ this.dataAngajarii.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + "\nSalariul : "
-				+ this.salariul;
+				+ this.salariul + "\n";
 	}
 	
 	
@@ -90,5 +90,26 @@ public class Angajat {
 	public boolean hasSalaryBiggerThan(float value)
 	{
 		return this.salariul > value;
+	}
+	
+	
+	//functie ce verifica daca stringul post contine "sef" sau "director"
+	public boolean hasLeadingPosition()
+	{
+		return this.post.contains("Sef") || this.post.contains("Director");
+	}
+	
+	
+	//functie ce verifica daca luna angajarii e egala cu valorea data
+	public boolean isMonthOfEmployment(int value)
+	{
+		return this.dataAngajarii.getMonthValue() == value;
+	}
+	
+	
+	//functie ce verifica daca anul angajarii e egal cu valoarea data
+	public boolean isYearOfEmployment(int value)
+	{
+		return this.dataAngajarii.getYear() == value;
 	}
 }
