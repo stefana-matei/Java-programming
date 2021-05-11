@@ -21,55 +21,65 @@ public class Angajat {
 	}
 
 	
+	//get nume
 	public String getNume() 
 	{
 		return nume;
 	}
 
 	
+	//set nume
 	public void setNume(String nume) 
 	{
 		this.nume = nume;
 	}
 
 	
+	//get post
 	public String getPost() 
 	{
 		return post;
 	}
 
 	
+	//set post
 	public void setPost(String post) 
 	{
 		this.post = post;
 	}
 
 	
+	//get dataAngajarii
 	public LocalDate getDataAngajarii() 
 	{
 		return dataAngajarii;
 	}
 
 	
+	//set dataAngajarii
 	public void setDataAngajarii(LocalDate dataAngajarii) 
 	{
 		this.dataAngajarii = dataAngajarii;
 	}
 
 	
+	//get salariul
 	public Float getSalariul() 
 	{
 		return salariul;
 	}
 
 	
+	//set salariul
 	public void setSalariul(Float salariul) 
 	{
 		this.salariul = salariul;
 	}
 
 	
-	public String toString() {
+	//afisare date angajati
+	public String toString() 
+	{
 		return "Nume : " + this.nume + "\nPost : " + this.post + "\nData angajarii : "
 				+ this.dataAngajarii.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + "\nSalariul : "
 				+ this.salariul;
