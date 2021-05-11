@@ -15,13 +15,15 @@ public class MainApp {
 
 	public static void main(String[] args) throws IOException {
 		
-		Scanner input = new Scanner(new File("in.txt"));
+		
+		Scanner citireFisier = new Scanner(new File("in.txt"));
 
-		// colectia de angajati de tip list
+		
+		//lista de angajati
 		List<Angajat> angajati = new ArrayList<>();
 		
 		
-		//lista de angajatii din luna Aprilie cu functii de conducere
+		//lista cu angajatii din luna Aprilie cu functii de conducere
 		List<Angajat> aprilLeaders = new ArrayList<>();
 		
 		
@@ -33,9 +35,10 @@ public class MainApp {
 		List<String> upperCasedNames = new ArrayList<>();
 		
 		
-		while (input.hasNext()) {
+		//1. citire din fisierul de intrare si creearea colectiei de angajati
+		while (citireFisier.hasNext()) {
 			
-			String[] dateAngajati = input.nextLine().split(", ");
+			String[] dateAngajati = citireFisier.nextLine().split(", ");
 			
 			angajati.add(new Angajat(
 					dateAngajati[0],
@@ -46,21 +49,21 @@ public class MainApp {
 		}
 		
 		
-		//afisare colectie de angajati
-		System.out.println("Toate datele despre angajatii din firma : " + "\n");
+		//2. afisare colectie de angajati
+		System.out.println("Toate datele despre angajatii din firma : \n");
 		angajati.forEach(System.out::println);
 		
 		
-		//afisare angajati care au salariul peste 2500 RON
-		System.out.println("\nAngajatii cu salariile mai mari de 2500 RON : ");
+		//3. afisare angajati care au salariul peste 2500 RON
+		System.out.println("\nAngajatii cu salariile mai mari de 2500 RON : \n");
 		angajati
 		.stream()
 		.filter(angajat -> angajat.hasSalaryBiggerThan(2500))
 		.forEach(System.out::println);
 		
 		
-		//afisare angajatii din luna Aprilie, a anului curent, care au functie de conducere
-		System.out.println("\nAngajatii din luna Aprilie, a anului curent, care au functie de conducere : ");
+		//4. creare lista si afisare a angajatilor din luna Aprilie, a anului curent, care au functie de conducere
+		System.out.println("\nAngajatii din luna Aprilie, a anului curent, care au functie de conducere : \n");
 		aprilLeaders = angajati
 					   .stream()
 					   .filter((angajat) -> angajat.isMonthOfEmployment(4))
@@ -71,8 +74,8 @@ public class MainApp {
 		aprilLeaders.forEach(System.out::println);
 		
 		
-		//afisare angajati care nu au functie de conducere in ord. descresc. a salariilor
-		System.out.println("\nAngajatii fara functii de conducere sortati in ordinea descrescatoare a salariilor : ");
+		//5. afisare angajati care nu au functie de conducere in ord. descresc. a salariilor
+		System.out.println("\nAngajatii fara functii de conducere sortati in ordinea descrescatoare a salariilor : \n");
 		nonLeaders = angajati
 					.stream()
 					.filter((angajat) -> !(angajat.hasLeadingPosition()))
@@ -82,8 +85,8 @@ public class MainApp {
 		nonLeaders.forEach(System.out::println);
 		
 		
-		//afisare lista de String-uri cu numele angajatilor scrise cu majuscule
-		System.out.println("\nLista de String-uri care contine numele angajatilor scrise cu majuscule : ");
+		//6. afisare lista de String-uri cu numele angajatilor, scrise cu majuscule
+		System.out.println("\nLista de String-uri care contine numele angajatilor scrise cu majuscule : \n");
 		upperCasedNames = angajati
 						.stream()
 						.map(angajat -> angajat.getNume().toUpperCase())
@@ -92,8 +95,8 @@ public class MainApp {
 		upperCasedNames.forEach(System.out::println);
 		
 		
-		//afisare doar salariile mai mici de 3000 RON
-		System.out.println("\nSalariile ce nu depasesc 3000 RON : ");
+		//7. afisare doar salariile mai mici de 3000 RON
+		System.out.println("\nSalariile ce nu depasesc 3000 RON : \n");
 		angajati
 		.stream()
 		.filter(angajat -> !angajat.hasSalaryBiggerThan(3000))

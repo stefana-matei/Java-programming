@@ -80,8 +80,8 @@ public class Angajat {
 	//afisare date angajati
 	public String toString() 
 	{
-		return "Nume : " + this.nume + "\nPost : " + this.post + "\nData angajarii : "
-				+ this.dataAngajarii.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + "\nSalariul : "
+		return this.nume + ", " + this.post + ", "
+				+ this.dataAngajarii.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + ", "
 				+ this.salariul + "\n";
 	}
 	
