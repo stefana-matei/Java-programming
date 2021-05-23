@@ -1,6 +1,6 @@
 package ex1;
 
-public class Extragere {
+public class Extragere extends Thread {
 
 	private ContBancar contBancar;
 	
@@ -19,7 +19,14 @@ public class Extragere {
 			
 			sumaExtrasa = (int) (Math.random() * 1000);
 			contBancar.extragere(sumaExtrasa);
+			
+			try {
+				
+				sleep((int) (Math.random() * 1000));
+			} catch (InterruptedException e) {
+
+				e.printStackTrace();
+			}
 		}
 	}
-	
 }

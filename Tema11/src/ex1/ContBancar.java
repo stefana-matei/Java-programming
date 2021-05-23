@@ -31,7 +31,7 @@ public class ContBancar {
 		if (sumaExtrasa <= this.sumaCont) {
 			
 			this.sumaCont -= sumaExtrasa;
-			System.out.printf("- A fost extrasa suma de " + sumaExtrasa + " RON si in cont au ramas " + sumaCont +" RON");
+			System.out.printf("\n-- A fost extrasa suma de " + sumaExtrasa + " RON si in cont au ramas " + sumaCont +" RON\n");
 		}
 		
 		notify();
@@ -42,7 +42,7 @@ public class ContBancar {
 	{
 		
 		this.sumaCont += sumaDepusa;
-		System.out.printf("+ - A fost depusa suma de " + sumaDepusa + " RON, in cont sunt : " + sumaCont + " RON");
+		System.out.printf("\n++ A fost depusa suma de " + sumaDepusa + " RON, in cont sunt : " + sumaCont + " RON\n");
 		notify();
 	}
 
