@@ -30,7 +30,7 @@ public class Parcare {
 		if(this.numarLocuriOcupate > 0) {
 			
 			this.numarLocuriOcupate--;
-			System.out.printf("\nA iesit o masina. In parcare sunt " + numarLocuriOcupate + " masini\n");
+			System.out.printf("\n- A iesit o masina. In parcare sunt " + numarLocuriOcupate + " masini\n");
 		}
 		
 		notify();
@@ -55,7 +55,7 @@ public class Parcare {
 		if (this.numarLocuriOcupate < capacitateParcare) {
 
 			this.numarLocuriOcupate++;
-			System.out.printf("\nA intrat o masina pe intrarea " + intrare + ". In parcare sunt " + numarLocuriOcupate
+			System.out.printf("\n+ A intrat o masina pe intrarea " + intrare + ". In parcare sunt " + numarLocuriOcupate
 					+ " masini.\n");
 		}
 
