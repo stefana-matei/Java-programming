@@ -2,26 +2,63 @@ package ex2;
 
 public class Parcare {
 
-	private int numarTotalLocuri;
+	private int capacitateParcare;
 	private int numarLocuriOcupate;
+
 	
-	
-	public Parcare(int numarTotalLocuri, int numarLocuriOcupate)
+	public Parcare(int numarTotalLocuri, int numarLocuriOcupate) 
 	{
-		this.numarTotalLocuri = numarTotalLocuri;
+		this.capacitateParcare = numarTotalLocuri;
 		this.numarLocuriOcupate = numarLocuriOcupate;
 	}
+
 	
-	
-	public synchronized void Iesire()
+	public synchronized void iesire() 
 	{
 		
-	}
-	
-	
-	public synchronized void Intrare(int intrare)
-	{
+		if(this.numarLocuriOcupate == 0)
+			
+			try {
+				
+				wait();
+			} catch (InterruptedException e) {
+				
+				e.printStackTrace();
+			}
 		
+		
+		if(this.numarLocuriOcupate > 0) {
+			
+			this.numarLocuriOcupate--;
+			System.out.printf("A iesit o masina. In parcare sunt " + numarLocuriOcupate + " masini");
+		}
+		
+		notify();
 	}
+
 	
+	public synchronized void intrare(int intrare) 
+	{
+
+		while (this.numarLocuriOcupate >= capacitateParcare) {
+
+			try {
+				
+				wait();
+			} catch (InterruptedException e) {
+				
+				e.printStackTrace();
+			}
+		}
+
+		
+		if (this.numarLocuriOcupate < capacitateParcare) {
+
+			this.numarLocuriOcupate++;
+			System.out.printf("A intrat o masina pe intrarea " + intrare + ". In parcare sunt " + numarLocuriOcupate
+					+ " masini.");
+		}
+
+		notify();
+	}
 }
