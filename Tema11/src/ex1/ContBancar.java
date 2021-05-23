@@ -33,6 +33,7 @@ public class ContBancar {
 			this.sumaCont -= sumaExtrasa;
 			System.out.printf("- A fost extrasa suma de " + sumaExtrasa + " RON si in cont au ramas " + sumaCont +" RON");
 		}
+		
 		notify();
 	}
 	
