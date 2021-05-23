@@ -16,7 +16,7 @@ public class Intrare extends Thread {
 	public void run()
 	{
 		
-		for(int i = 0; i < 5; i++) {
+		for(int i = 0; i < 3; i++) {
 			
 			parcare.intrare(intrare);
 		}

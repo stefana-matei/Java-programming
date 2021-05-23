@@ -16,7 +16,7 @@ public class Parcare {
 	public synchronized void iesire() 
 	{
 		
-		if(this.numarLocuriOcupate == 0)
+		if(this.numarLocuriOcupate <= 0) {
 			
 			try {
 				
@@ -25,14 +25,10 @@ public class Parcare {
 				
 				e.printStackTrace();
 			}
-		
-		
-		if(this.numarLocuriOcupate > 0) {
-			
-			this.numarLocuriOcupate--;
-			System.out.printf("\n- A iesit o masina. In parcare sunt " + numarLocuriOcupate + " masini\n");
 		}
-		
+			
+		this.numarLocuriOcupate--;
+		System.out.printf("\n- A iesit o masina. In parcare sunt " + numarLocuriOcupate + " masini\n");
 		notify();
 	}
 
@@ -51,14 +47,9 @@ public class Parcare {
 			}
 		}
 
-		
-		if (this.numarLocuriOcupate < capacitateParcare) {
-
-			this.numarLocuriOcupate++;
-			System.out.printf("\n+ A intrat o masina pe intrarea " + intrare + ". In parcare sunt " + numarLocuriOcupate
+		this.numarLocuriOcupate++;
+		System.out.printf("\n+ A intrat o masina pe intrarea " + intrare + ". In parcare sunt " + numarLocuriOcupate
 					+ " masini.\n");
-		}
-
 		notify();
 	}
 }

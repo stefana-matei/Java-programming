@@ -14,7 +14,7 @@ public class Iesire extends Thread {
 	public void run()
 	{
 		
-		for(int i = 0; i < 5; i++) {
+		for(int i = 0; i < 4; i++) {
 			
 			parcare.iesire();
 		}
