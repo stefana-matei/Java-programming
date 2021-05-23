@@ -17,7 +17,6 @@ public class Iesire extends Thread {
 		for(int i = 0; i < 5; i++) {
 			
 			parcare.iesire();
-			System.out.printf("IESIRE GATA");
 		}
 	}
 

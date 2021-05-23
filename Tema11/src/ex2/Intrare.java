@@ -19,7 +19,6 @@ public class Intrare extends Thread {
 		for(int i = 0; i < 5; i++) {
 			
 			parcare.intrare(intrare);
-			System.out.printf("INTRARE GATA");
 		}
 	}
 }

@@ -14,9 +14,7 @@ public class MainApp {
 		intrare1.start();
 		intrare2.start();
 		intrare3.start();
-		iesire.start();
-		
-		System.out.printf("GATA MAIN");
+		iesire.start();		
 	}
 
 }
